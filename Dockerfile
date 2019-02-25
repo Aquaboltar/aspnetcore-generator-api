@@ -10,7 +10,9 @@ COPY tests/tests.csproj ./tests/
 RUN dotnet restore tests/tests.csproj
 
 #RUN ls -alR
+
 # copy src
+COPY . .
 
 # test
 
