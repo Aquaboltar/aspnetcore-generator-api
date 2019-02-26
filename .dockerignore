@@ -1,4 +1,11 @@
-bin/
-obj/
-Dockerfile
-.dockerignore
+**/bin/
+**/obj/
+**/.git/
+**/.vs/
+**/Dockerfile*
+**/.dockerignore
+**/docker-compose*.yml
+.gitignore
+LICENSE
+README.md
+**/*.user

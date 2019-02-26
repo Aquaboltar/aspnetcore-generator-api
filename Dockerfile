@@ -15,14 +15,16 @@ RUN dotnet restore tests/tests.csproj
 COPY . .
 
 # test
-
+RUN dotnet test tests/tests.csproj
 
 # publish
-
+RUN dotnet publish api/api.csproj -o /publish
 
 # runtime stage
-
-
+FROM microsoft/dotnet:2.2-aspnetcore-runtime
+COPY --from=build-env /publish /publish
+WORKDIR /publish
+ENTRYPOINT ["dotnet", "api.dll"]
 
 
 #COPY api.csproj .
