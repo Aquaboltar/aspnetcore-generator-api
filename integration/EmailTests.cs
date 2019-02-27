@@ -59,7 +59,7 @@ namespace integration
 
                 var raw = firstItem.Should().HaveElement("Raw")
                     .Which.Should().HaveElement("From")
-                    .Which.Should().HaveValue("enerator@generate.com");
+                    .Which.Should().HaveValue("generato@generate.com");
 
                 //var from = raw.Should().HaveElement("From");
                 //.Which.First.Should().HaveElement("Raw")
