@@ -15,6 +15,7 @@ RUN dotnet restore tests/tests.csproj
 COPY . .
 
 # test
+ENV TEAMCITY_PROJECT_NAME=fake # for better xUnit TeamCity test runner integration
 RUN dotnet test tests/tests.csproj
 
 # publish
