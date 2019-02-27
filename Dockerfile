@@ -16,7 +16,8 @@ COPY . .
 
 # test
 # for better xUnit TeamCity test runner integration
-ENV TEAMCITY_PROJECT_NAME=fake 
+#ENV TEAMCITY_PROJECT_NAME=fake 
+ENV TEAMCITY_PROJECT_NAME = ${TEAMCITY_PROJECT_NAME}
 RUN dotnet test tests/tests.csproj
 
 # publish
