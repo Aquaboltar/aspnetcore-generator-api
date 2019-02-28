@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   generator:
-    image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:ci-${GENERATOR_BUILD_NUMBER-26}
+    image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:ci-${GENERATOR_BUILD_NUMBER-34}
     #ports:
     #  - "8086:80" not needed for ci but can turn on for local testing
     depends_on:
@@ -13,7 +13,7 @@ services:
       #- "8025:8025" not needed for ci but can turn on for local testing
 #      - "1025:1025" not needed because not interacting
   integration:
-    image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:integration-${BUILD_NUMBER-26}
+    image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:integration-${BUILD_NUMBER-34}
     build: .
     depends_on:
       - generator
