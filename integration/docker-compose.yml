@@ -5,6 +5,8 @@ services:
     image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:ci-${GENERATOR_BUILD_NUMBER-26}
     #ports:
     #  - "8086:80" not needed for ci but can turn on for local testing
+    depends_on:
+      - mail
   mail:
     image: mailhog/mailhog
     #ports:
@@ -13,5 +15,8 @@ services:
   integration:
     image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:integration-${BUILD_NUMBER-26}
     build: .
+    depends_on:
+      - generator
+      - mail
     environment:
       - TEAMCITY_PROJECT_NAME
