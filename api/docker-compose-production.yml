@@ -1,0 +1,7 @@
+version: '3.1'
+
+services:
+  generator:
+    image: 497248382354.dkr.ecr.us-east-1.amazonaws.com/test1:ci-${GENERATOR_BUILD_NUMBER-34}
+    ports:
+      - "80:80"
