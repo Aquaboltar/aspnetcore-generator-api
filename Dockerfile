@@ -9,8 +9,6 @@ RUN dotnet restore api/api.csproj
 COPY tests/tests.csproj ./tests/
 RUN dotnet restore tests/tests.csproj
 
-#RUN ls -alR
-
 # copy src
 COPY . .
 
@@ -28,16 +26,3 @@ FROM microsoft/dotnet:2.2-aspnetcore-runtime
 COPY --from=build-env /publish /publish
 WORKDIR /publish
 ENTRYPOINT ["dotnet", "api.dll"]
-
-
-#COPY api.csproj .
-#RUN dotnet restore
-
-#COPY . .
-#RUN dotnet publish -o /publish
-
-# Runtime Image Stage
-#FROM microsoft/aspnetcore:2
-#WORKDIR /publish
-#COPY --from=build-env /publish .
-#ENTRYPOINT ["dotnet", "api.dll"]
