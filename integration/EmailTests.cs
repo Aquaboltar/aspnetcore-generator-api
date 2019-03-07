@@ -20,6 +20,9 @@ namespace integration
         [Fact]
         public async Task SendEmailWithNames_IsFromGenerator()
         {
+            Console.WriteLine("WAITING 10 SECS");
+            System.Threading.Thread.Sleep(10000);
+
             // send email
             var client = new HttpClient();
             var sendEmail = new HttpRequestMessage
