@@ -16,11 +16,13 @@ namespace api.Controllers
     public class GenerateController : Controller
     {
         public const string MAIL_HOST = "mail";
+        //public const string MAIL_HOST = "localhost";
         public const int MAIL_PORT = 1025;
 
         [HttpPost]
         public async Task EmailRandomNames(Range range, string email = "test@fake.com")
         {
+            //return;
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Generator", "generator@generate.com"));
             message.To.Add(new MailboxAddress("", email));
